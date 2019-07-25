@@ -1,0 +1,563 @@
+/* ================================================================================ */
+/*  Navigation - (Responsive Nav) */
+/* ================================================================================ */
+
+#wrap_nav_main {
+    line-height: normal;
+    margin: 0 auto;
+    font-family: "museo",serif;
+
+    @include mq(min_width_6) {
+        max-height: 46px;
+        height: 46px;
+        padding: 0 15px;
+        background: $menu-bgcolor none repeat scroll 0 0;
+        box-sizing: border-box;
+        clear: both;
+        display: block;
+        padding: 0 30px;
+        max-width: 1280px;
+        position: relative;
+    }
+}
+
+#wrap_nav_main .wrap_grid {
+}
+
+#wrap_nav_main .grid_row {
+    @include mq(min_width_6) {
+        margin-bottom: 0 !important;
+    }
+}
+
+#wrap_nav_main .grid_row > div {
+}
+
+/*! responsive-nav.js 1.0.39 by @viljamis */
+
+/* --------------------------------------------------------------- */
+/*  toggle  */
+/* --------------------------------------------------------------- */
+
+#wrap_nav_main .nav-toggle {
+    @include mq(max_width_6) {
+        @include rem('font-size',24px);
+        background-color: $menu-bgcolor;
+        color: $menu-toptextcolor;
+        display: block;
+        font-weight: 700;
+        padding: 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+        user-select: none;
+    }
+
+    @include mq(min_width_6) {
+        display: none;
+    }
+}
+
+#wrap_nav_main .nav-toggle:hover,
+#wrap_nav_main .nav-toggle.active:hover {
+    @include mq(min_width_6) {
+        background-color: $menu-bgcolor;
+    }
+}
+
+#wrap_nav_main .nav-toggle.active {
+    @include mq(max_width_6) {
+        background-color: $menu-bgcolor;
+        border-bottom: 1px solid #fff;
+    }
+}
+
+.nav-toggle:after {
+    @include mq(max_width_6) {
+        @include rem('font-size',24px);
+        color: $menu-toptextcolor;
+        content: "\f0c9";
+        float: right;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        margin-right: 10px;
+        position: relative;
+        text-decoration: none;
+        top: -2px;
+    }
+
+    @include mq(min_width_6) {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------------------- */
+/*  nav  */
+/* --------------------------------------------------------------- */
+
+#nav_main {
+}
+
+.js #nav_main {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+
+    @include mq(min_width_6) {
+        max-height: 100%;
+        overflow: visible;
+        position: relative;
+    }
+}
+
+#nav_main.opened {
+    @include mq(max_width_6) {
+        max-height: 9999px;
+    }
+}
+
+.js #nav_main.closed {
+    @include mq(min_width_6) {
+        max-height: none;
+    }
+}
+
+/* --------------------------------------------------------------- */
+/*  1st level */
+/* --------------------------------------------------------------- */
+
+/* ul
+								-------------------------------------------- */
+
+#nav_main > ul {
+    display: block;
+    width: 100%;
+
+    @include mq(min_width_6) {
+        display: table;
+        width: 100%;
+    }
+}
+
+/* li
+									-------------------------------------------- */
+
+#nav_main > ul > li {
+    border-bottom: 1px solid #fff;
+    display: block;
+    width: 100%;
+    -webkit-transition: background .3s ease;
+    -ms-transition: background .3s ease;
+    transition: background .3s ease;
+
+    @include mq(min_width_6) {
+        border-bottom: none;
+        display: table-cell;
+        position: relative;
+        text-align: center;
+        width: auto;
+    }
+
+    @include mq(min_width_6) {
+        //background: url(../../../img/maiwel/global/header/header_grey_divider.gif) no-repeat right center;
+    }
+}
+
+#nav_main > ul > li:first-child {
+}
+
+#nav_main > ul > li:last-child {
+    border-bottom: none;
+
+    @include mq(min_width_6) {
+        background-image: none;
+    }
+}
+
+/* a
+										-------------------------------------------- */
+
+#nav_main > ul > li > a {
+    @include rem('font-size',18px);
+    background-color: $menu-bgcolor;
+    color: $menu-toptextcolor;
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    overflow: hidden;
+    padding: 12px 15px;
+    text-decoration: none;
+
+    @include mq(min_width_6) {
+        background-color: transparent;
+        color: $menu-toptextcolor;
+        padding: 12px 0;
+        white-space: nowrap;
+    }
+
+    @include mq(max_width_6) {
+        padding: 12px 8px;
+    }
+}
+
+#nav_main > ul > li:first-child > a {
+    @include mq(min_width_6) {
+        padding-left: 0;
+    }
+}
+
+#nav_main > ul > li:last-child > a {
+    @include mq(min_width_6) {
+        padding-right: 0;
+    }
+}
+
+/* a:hover */
+#nav_main > ul > li > a:hover {
+    @include mq(max_width_6) {
+        background-color: $menu-hoverbgcolor;
+        color: $menu-hovertxtcolor;
+        text-decoration: none;
+    }
+}
+
+#nav_main > ul > li > a:hover,
+#nav_main > ul > li:hover > a {
+    -webkit-transition: background .3s ease;
+    -ms-transition: background .3s ease;
+    transition: background .3s ease;
+
+    @include mq(min_width_6) {
+        background-color: $menu-hoverbgcolor;
+        color: $menu-hovertxtcolor;
+        text-decoration: none;
+    }
+}
+
+/* a:active */
+#nav_main > ul > li > a:active {
+    @include mq(min_width_6) {
+        color: $menu-hovertxtcolor;
+    }
+}
+
+/* .current a */
+/*#nav_main > ul > .current > a {
+    @include mq(max_width_6) {
+        background-color: $menu-hoverbgcolor;
+        text-decoration: none;
+    }
+}
+
+#nav_main > ul > .current > a,
+#nav_main > ul > .current > a:hover,
+#nav_main > ul > .current:hover > a {
+    @include mq(min_width_6) {
+        background-color:  $menu-hoverbgcolor;
+        color:  $menu-hovertxtcolor;
+        text-decoration: none;
+    }
+}*/
+
+/* .parent a */
+/* .parent a:before */
+#nav_main > ul > .parent > a:before {
+    @include mq(max_width_6) {
+        content: "";
+    }
+
+    @include mq(min_width_6) {
+        float: right;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        position: relative;
+        text-decoration: none;
+        @include rem('font-size',14px);
+        content: "\f067";
+        right: 4px;
+        top: 2px;
+    }
+}
+
+/* --------------------------------------------------------------- */
+/*  2nd level */
+/* --------------------------------------------------------------- */
+
+/* ul
+											-------------------------------------------- */
+
+#nav_main > ul > li > ul {
+    @include mq(min_width_6) {
+        box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.5);
+        display: none;
+        min-width: 18em;
+        position: absolute;
+        text-align: left;
+        z-index: 9999;
+    }
+}
+
+#nav_main > ul > li:hover > ul,
+#nav_main > ul > li.sfHover > ul {
+    @include mq(min_width_6) {
+        display: block;
+    }
+}
+
+/* li
+												-------------------------------------------- */
+
+#nav_main > ul > li > ul > li {
+    display: block;
+    width: 100%;
+    -webkit-transition: background .3s ease;
+    -ms-transition: background .3s ease;
+    transition: background .3s ease;
+
+    @include mq(max_width_6) {
+        border-bottom: 1px solid #fff;
+    }
+
+    @include mq(min_width_6) {
+        position: relative;
+    }
+}
+
+#nav_main > ul > li > ul > li:first-child {
+    @include mq(max_width_6) {
+        border-top: 1px solid #fff;
+    }
+}
+
+#nav_main > ul > li > ul > li:last-child {
+    @include mq(max_width_6) {
+        border-bottom: none;
+    }
+}
+
+#nav_main > ul > li > ul > .current {
+}
+
+/* a
+													-------------------------------------------- */
+
+#nav_main > ul > li > ul > li > a {
+    @include rem('font-size',16px);
+    background-color: $menu-flyoutbgcolor;
+    color: $menu-flyouttxtcolor;
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    overflow: hidden;
+    padding: 10px 15px 10px 30px;
+    text-decoration: none;
+    -webkit-transition: background .3s ease;
+    -ms-transition: background .3s ease;
+    transition: background .3s ease;
+
+    @include mq(min_width_6) {
+        border-bottom: 1px solid #fff;
+        padding: 10px 15px;
+    }
+}
+
+#nav_main > ul > li > ul > li:last-child > a {
+    @include mq(min_width_6) {
+        border-bottom: none;
+    }
+}
+
+/* :hover */
+#nav_main > ul > li > ul > li > a:hover {
+    -webkit-transition: background .3s ease;
+    -ms-transition: background .3s ease;
+    transition: background .3s ease;
+
+    @include mq(max_width_6) {
+        background-color: $menu-hoverbgcolor;
+        color: $menu-hovertxtcolor;
+        text-decoration: none;
+    }
+}
+
+#nav_main > ul > li > ul > li > a:hover,
+#nav_main > ul > li > ul > li:hover > a {
+    @include mq(min_width_6) {
+        background-color: $menu-hoverbgcolor;
+        color: $menu-hovertxtcolor;
+        text-decoration: none;
+    }
+}
+
+/* .current */
+/*#nav_main > ul > li > ul > .current > a,
+#nav_main > ul > li > ul > .current > a:hover {
+    @include mq(max_width_6) {
+        background-color: $brand-olive;
+        text-decoration: underline;
+    }
+}*/
+
+/* .current */
+/*#nav_main > ul > li > ul > .current > a,
+#nav_main > ul > li > ul > .current > a:hover #nav_main > ul > li > ul > li.current > a:hover,
+#nav_main > ul > li > ul > li.current:hover > a {
+    @include mq(min_width_6) {
+        background-color: $brand-olive;
+        text-decoration: underline;
+    }
+}*/
+
+/*#nav_main > ul > li > ul > .current > a:before {
+    @include mq(max_width_6) {
+        content: "\f0da";
+        float: left;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        margin-right: 10px;
+        text-decoration: none;
+    }
+}*/
+
+/* .parent a */
+#nav_main > ul > li > ul > .parent > a {
+    @include mq(max_width_6) {
+        padding-right: 42px;
+    }
+
+    @include mq(min_width_6) {
+        padding-right: 20px;
+    }
+}
+
+/* .parent_of_current a */
+/*#nav_main > ul > li > ul > .parent_of_current > a {
+    @include mq(min_width_6) {
+        background-color: transparent;
+        color: $brand-olive;
+        text-decoration: underline;
+    }
+}*/
+
+/* .parent a:before */
+#nav_main > ul > li > ul > .parent > a:before {
+    color: #fff;
+    float: right;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    right: 0;
+    position: relative;
+    text-decoration: none;
+
+    @include mq(max_width_6) {
+        content: "";
+    }
+
+    @include mq(min_width_6) {
+        @include rem('font-size',14px);
+        content: "\f0da";
+        right: -4px;
+        top: 2px;
+    }
+}
+
+/* .parent a:hover:before */
+#nav_main > ul > li > ul > .parent > a:hover:before {
+    @include mq(min_width_6) {
+        // color: $brand-grey;
+    }
+}
+
+/* .parent_of_current a:hover:before */
+#nav_main > ul > li > ul > .parent > a:hover:before {
+    @include mq(min_width_6) {
+        // color: $brand-grey;
+    }
+}
+
+/* --------------------------------------------------------------- */
+/*  3rd level */
+/* --------------------------------------------------------------- */
+
+/* ul
+															-------------------------------------------- */
+
+#nav_main > ul > li > ul > li > ul {
+    @include mq(min_width_6) {
+        box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.5);
+        border-top: 1px solid #fff;
+        display: none;
+        min-width: 18em;
+        position: absolute;
+        text-align: left;
+        z-index: 9999;
+        top: -1px;
+        left: 100%;
+    }
+}
+
+#nav_main li li:hover ul,
+#nav_main li li.sfHover ul {
+    @include mq(min_width_6) {
+        display: block;
+    }
+}
+
+/* li */
+#nav_main li li li {
+    -webkit-transition: background .3s ease;
+    -ms-transition: background .3s ease;
+    transition: background .3s ease;
+    border-bottom: 1px solid #fff;
+}
+
+#nav_main li li li:first-child {
+    border-top: 1px solid #fff;
+
+    @include mq(min_width_6) {
+        border-top: none;
+    }
+}
+
+#nav_main li li li:last-child {
+    border-bottom: none;
+}
+
+/* a */
+#nav_main li li li a {
+    @include rem('font-size',14px);
+    background-color: $menu-flyoutbgcolor;
+    color: $menu-flyouttxtcolor;
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    overflow: hidden;
+    padding: 10px 15px 10px 45px;
+    text-decoration: none;
+
+    @include mq(min_width_6) {
+        padding: 11px 15px;
+    }
+}
+
+/* :hover */
+#nav_main li li li a:hover {
+    background-color: $menu-hoverbgcolor;
+    color: $menu-hovertxtcolor;
+    text-decoration: none;
+    -webkit-transition: background .3s ease;
+    -ms-transition: background .3s ease;
+    transition: background .3s ease;
+}
+
+/* .current */
+/*#nav_main li li .current > a {
+    background-color: $brand-olive;
+    text-decoration: underline;
+}*/

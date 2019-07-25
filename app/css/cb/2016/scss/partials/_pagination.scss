@@ -1,0 +1,57 @@
+/* ================================================================================ */
+/*  Pagination */
+/* ================================================================================ */
+
+.pagination {
+    margin: 0 0;
+    //overflow: hidden;
+}
+
+.pagination ul {
+    @include border_radius();
+    border: 1px solid;
+    float: left;
+}
+
+.pagination ul * {
+    list-style-type: none;
+    list-style-image: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0px;
+}
+
+.pagination ul li {
+    margin-bottom: 0 !important;
+}
+
+.pagination a,
+.pagination li span,
+.pagination .items_per > span {
+    padding: 8px 15px;
+    border-left: 1px solid;
+    text-decoration: none;
+}
+
+.pagination .items_per a {
+    border: none;
+    float: none;
+    padding: 0;
+    text-decoration: none;
+    transition: 0.1s linear all;
+}
+
+.pagination a:hover,
+.pagination .current span {
+    background-color: $menu-bgcolor;
+    color: $menu-hovertxtcolor;
+}
+
+.pagination .disabled span {
+    color:  $menu-toptextcolor;
+}
+
+.pagination .first span {
+    border-left: none;
+}

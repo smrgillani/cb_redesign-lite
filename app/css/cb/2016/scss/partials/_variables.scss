@@ -1,0 +1,68 @@
+/* ================================================================================ */
+/*  SASS Variables */
+/* ================================================================================ */
+@import "../addons/include-media";
+
+// include-media breakpoints
+	$breakpoints: (
+	  xs: 0,
+	  sm: 480px,
+	  md: 768px,
+	  lg: 992px,
+	  xl: 1300px, 
+	);
+
+    //Menu Colours
+    $menu-bgcolor: #1d2e59; 
+	$menu-flyoutbgcolor: #333;
+    $menu-flyouttxtcolor:#ddd;
+    $menu-hoverbgcolor: #00a6ce;
+    $menu-hovertxtcolor: #ffffff;
+   $menu-toptextcolor: #999;
+    $moo: #d98595;
+    // $base-font-color: #4f585f; // doesn't meet WCAG Level AA Colour Contrast requirements
+	$base-font-color: #323a41;
+     $cibis-light-blue: #00add0;
+	// $brand-olive: #888000; // doesn't meet WCAG Level AA Colour Contrast requirements
+	$brand-olive: #807900;
+
+	$brand-maroon: #9b0058;
+	$brand-orange: #FF7C00;
+
+	$brand-light-orange: #ffa200;
+
+	// $brand-dark-orange: #ff6517; // doesn't meet WCAG Level AA Colour Contrast requirements
+	$brand-dark-orange: #fd6315;
+
+	$brand-light-pink: #d98595;
+
+	// $brand-dark-pink: #f74c54; // doesn't meet WCAG Level AA Colour Contrast requirements
+	$brand-dark-pink: #dc2f40;
+
+	$brand-purple: #ad8ab9;
+
+	// $brand-light-blue: #33b5cf; // doesn't meet WCAG Level AA Colour Contrast requirements
+	$brand-light-blue: #00a6cf;
+	$brand-blue:#1D2E59;
+	$brand-dark-blue: #2c7b9e;  // doesn't meet WCAG Level AA Colour Contrast requirements
+
+	// $brand-green: #13bb7a; // doesn't meet WCAG Level AA Colour Contrast requirements
+	$brand-green: #008854;
+
+	$brand-grey: #4f585f; // doesn't meet WCAG Level AA Colour Contrast requirements
+	$brand-grey: #424a51;
+
+	$brand-light-grey: #999ea3;
+
+	$base-margin: 1.375em;
+	$base-margin-half: 0.6875em;
+	$base-margin-all: 0 0 1.375em 0;
+	$base-margin-bottom: 1.375em;
+	$base-margin-double: 2.75em;
+
+
+///screen size for mobile mediaqueries
+$mobile-screen:600px;
+$l-tablet-screen:1100px;
+$tablet-screen:900px;
+$x-small-screen:475px;

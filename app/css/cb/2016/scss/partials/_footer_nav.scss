@@ -1,0 +1,47 @@
+﻿/////////////////////////////////////////////////
+// footer tables
+/////////////////////////////////////////////////
+.footer-nav {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 0px;
+    text-decoration: none;
+
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4 {
+        float: left;
+        width: 25%;
+        padding-left: 5px;
+        li { padding-bottom:5px;}
+    }
+
+    .col-heading {
+        font-weight: bold;
+        padding-top: 30px;
+        padding-bottom: 5px;
+    }
+}
+
+.footer-nav a {
+    text-decoration:none;
+}
+
+.footer-nav a:hover {
+    text-decoration:underline;
+}
+// Responsive footer nav
+@media screen and (max-width: 767px) {
+    .footer-nav {
+        text-align:center;
+        .col-1,
+        .col-2,
+        .col-3,
+        .col-4 {
+            margin: 0 auto;
+            float: none;
+            width:100%;
+        }
+    }
+}

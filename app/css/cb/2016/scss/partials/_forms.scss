@@ -1,0 +1,692 @@
+/* ================================================================================ */
+/*  1.7 Forms */
+/* ================================================================================ */
+
+	form {
+	    margin: 0; /* Correct margin displayed oddly in IE 6/7 */
+	}
+
+	.form {}
+
+	.form.form_responsive_stack_style {
+        // border: 1px solid pink;
+        margin-bottom: $base-margin-bottom;
+    }
+
+		/* --------------------------------------------------------------- */
+		/*  Form Rows */
+		/* --------------------------------------------------------------- */
+
+			.form .row {
+				@include clearfix();
+
+				// background-color: #d0f3ff;
+				margin: $base-margin-all;
+				// padding: 10px;
+			}
+
+            .form .row:last-child {
+                margin-bottom: 0;
+            }
+
+			.form .row:nth-child(odd) {
+				/* background-color: #f8f8f8; */
+			}
+
+				.form .row > .row_sub {
+					@include clearfix();
+
+                    clear: both;
+					// background-color: aquamarine;
+                    padding-top: $base-margin-half;
+					// padding: 5px;
+				}
+
+					.form .row > .row_sub > .row {
+                        // background-color: aquamarine;
+						margin: 0 0 5px 0;
+						padding: 0;
+					}
+
+					.form .row > .row_sub > .row:last-child {
+						margin-bottom: 0;
+					}
+
+				/* might be needed for xpect projects
+				.form .row.buttons button {
+					margin-right: 15px;
+				}
+
+				.form .row.buttons button:last-child {
+					margin-right: 0;
+				}
+				*/
+
+                .form .row > .buttons {}
+
+                    .form .row > .buttons button,
+                    .form .row > .buttons .button,
+                    .form .row > .buttons input[type="button"],
+                    .form .row > .buttons input[type="submit"] {
+                        margin-right: 10px;
+                    }
+
+                    .form .row > .buttons button:last-child,
+                    .form .row > .buttons .button:last-child,
+                    .form .row > .buttons input[type="button"]:last-child,
+                    .form .row > .buttons input[type="submit"]:last-child {
+                        margin-right: 0;
+                    }
+
+			/* --------------------------------------------------------------- */
+			/*  Form Responsive Stack Styles - Form Columns */
+			/* --------------------------------------------------------------- */
+
+				/* Form Column for Labels
+				-------------------------------------------- */
+
+				.form.form_responsive_stack_style .col_label {
+                    @include box-sizing(border-box);
+					@include clearfix();
+
+					// background-color: red;
+					// padding: 5px;
+
+                    @include mq(tablet) {
+                        float: left;
+                        padding-right: 20px;
+                        // width: 170px; /* 170px % 652px */
+                        width: 26.07361963190184%;
+                    }
+				}
+
+                /*
+               .form.form_responsive_stack_style .col_label.col_label_large {
+                    @include mq(tablet) {
+                        max-width: 300px;
+                        width: 50%;
+                    }
+				}
+                */
+
+				/* Form Column for Inputs, Selects, Textareas
+				-------------------------------------------- */
+
+				.form.form_responsive_stack_style .col_input {
+                    @include box-sizing(border-box);
+					@include clearfix();
+
+                    // background-color: blue;
+					// padding: 5px;
+
+                    @include mq(tablet) {
+                        float: left;
+                        // width: 482px; /* 482px % 652px */
+                        width: 73.92638036809816%;
+                    }
+				}
+
+		/* --------------------------------------------------------------- */
+		/*  Form Resets from Normalize.css */
+		/* --------------------------------------------------------------- */
+
+			/* 1. Correct font size not being inherited in all browsers */
+			/* 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5 and Chrome */
+			/* 3. Improve appearance and consistency in all browsers */
+			button,
+			input,
+			select,
+			textarea {
+			    font-size: 100%; /* 1 */
+			    margin: 0; /* 2 */
+			    vertical-align: baseline; /* 3 */
+			    *vertical-align: middle; /* 3 */
+			    -webkit-font-smoothing: antialiased;
+			}
+
+			/* Address Firefox 3+ setting `line-height` on `input` using `!important` in the UA stylesheet */
+			button,
+			input {
+			    line-height: normal;
+			}
+
+			/* Address inconsistent 'text-transform' inheritance for 'button' and 'select' */
+			/* All other form control elements do not inherit 'text-transform' values */
+			/* Correct 'button' style inheritance in Chrome, Safari 5+, and IE 6+ */
+			/* Correct 'select' style inheritance in Firefox 4+ and Opera */
+			button,
+			select {
+			    text-transform: none;
+			}
+
+			/* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native 'audio' and `video` controls */
+			/* 2. Correct inability to style clickable `input` types in iOS */
+			/* 3. Improve usability and consistency of cursor style between image-type 'input' and others */
+			button,
+			html input[type="button"], /* 1 */
+			input[type="reset"],
+			input[type="submit"] {
+			    -webkit-appearance: button; /* 2 */
+			    cursor: pointer; /* 3 */
+			}
+
+			/* Re-set default cursor for disabled elements */
+			button[disabled],
+			html input[disabled] {
+			    cursor: default;
+			}
+
+			 /* 1. Address box sizing set to content-box in IE 8/9 */
+			 /* 2. Remove excess padding in IE 8/9 */
+			input[type="checkbox"],
+			input[type="radio"] {
+			    box-sizing: border-box; /* 1 */
+			    padding: 0; /* 2 */
+			    *height: 13px; /* 3 */
+			}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.0 Form Lists */
+	/* --------------------------------------------------------------- */
+
+		.form ul.list_horiz,
+		.form ul.list_vert {
+			@include clearfix();
+
+			background-image: none;
+			list-style-type: none;
+			list-style-image: none;
+			margin: 0;
+			padding: 0;
+		}
+
+			.form ul.list_horiz li,
+			.form ul.list_vert li {
+				@include clearfix();
+
+				margin: 0 0 $base-margin-half 0;
+				padding: 0;
+			}
+
+			.form ul.list_horiz li:last-child,
+			.form ul.list_vert li:last-child {
+				margin-bottom: 0;
+			}
+
+            @include mq(tablet) {
+                .form .row ul.list_horiz li { /* Display form list horizontally */
+                    float: left;
+                    margin: 0 20px 0 0;
+                }
+
+                .form .row ul.list_horiz li:last-child {
+                    margin-right: 0;
+                }
+			} /* / @media */
+
+				.form .row li ul {
+					margin-top: 2em;
+				}
+
+					.form .row li li {}
+
+		/* Form Responsive Stack Styles
+		-------------------------------------------- */
+
+		 @include mq(tablet) {
+            .form.form_responsive_stack_style .col_input_no_note_first-child .col_input ul {
+                margin-top: 6px;
+                margin-top: 0;
+            }
+		}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.1 Required Fields */
+	/* --------------------------------------------------------------- */
+
+		p.required_field {}
+
+			.form  p.required_field small {
+				margin: 0;
+			}
+
+			p.required_field em,
+			.form em {
+                font-style: normal;
+			}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.2 Legends & Fieldsets */
+	/* --------------------------------------------------------------- */
+
+		legend {
+			// background-color: #ff6e6e;
+			border: 0; /* Correct color not being inherited in IE 6/7/8/9 */
+			display: table; /* IE10 bug - fixes legends not text wrapping */
+			margin: 0;
+			padding: 0 0 6px 0;
+			white-space: normal; /* Correct text not wrapping in Firefox 3 */
+		}
+
+		.form.form_responsive_stack_style .col_label legend {
+			padding-bottom: 0;
+		}
+
+		fieldset {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.3 Labels */
+	/* --------------------------------------------------------------- */
+
+		label,
+		.label {
+			// background-color: pink;
+			cursor: pointer;
+			display: block;
+			margin: 0 0 6px 0;
+		}
+
+		.form .row > label:only-child,
+		.form .row > .label:only-child {
+			// background-color: purple;
+			margin-bottom: 0;
+		}
+
+		input + label {
+			margin: 0;
+		}
+
+		.form .row fieldset .col_input label {
+			font-weight: normal;
+		}
+
+		/* labels within form list styles */
+		.form .row ul label,
+        .form .row ul span.label_block {
+			float: left;
+			font-weight: normal;
+			margin: 0 10px 0 0;
+		}
+
+		 /* Google Chrome Layout Bug */
+		 @include mq(tablet) {
+            .ua-chrome .form .row ul.list_horiz input,
+            .ua-chrome .form .row ul.list_horiz label {
+                float: none;
+                display: inline-block;
+
+            }
+
+            .ua-chrome .list_horiz input[type=checkbox] {top: 1px}
+            .ua-chrome .list_horiz label input[type=checkbox] {top: 2px}
+            .ua-chrome .list_horiz input[type=radio] {top: 1px}
+            .ua-chrome .list_horiz label input[type=radio] {top: 1px}
+
+            .ua-mac_os_x.ua-chrome .list_horiz input[type=checkbox] {top: 0; border: 2px solid red;}
+            .ua-mac_os_x.ua-chrome .list_horiz label input[type=checkbox] {top: 0; border: 2px solid blue;}
+            .ua-mac_os_x.ua-chrome .list_horiz input[type=radio] {top: 0; border: 2px solid orange;}
+            .ua-mac_os_x.ua-chrome .list_horiz label input[type=radio] {top: 0; border: 2px solid yellow;}
+		}
+		/* / Google Chrome Layout Bug */
+
+		/* label block classes */
+		span.label_block {
+            // background-color: aquamarine;
+			display: block;
+			margin: 0 0 6px 0;
+		}
+
+		/* label inline classes */
+		span.label_inline {
+            // background-color: aquamarine;
+			display: inline-block;
+			margin: 0 6px 0 0;
+			padding: 4px 0;
+		}
+
+        span.label_inline_checkbox {
+            // background-color: aquamarine;
+            display: inline-block;
+            margin: 0 6px 0 0;
+        }
+
+        span.label_inline_radio {
+            // background-color: aquamarine;
+            display: inline-block;
+        }
+
+		/* Form Responsive Stack Styles
+		-------------------------------------------- */
+
+		 @include mq(tablet) {
+            .form.form_responsive_stack_style .col_input_no_note_first-child .col_label label,
+            .form.form_responsive_stack_style .col_input_no_note_first-child .col_label legend {
+                margin: 0;
+                padding: 8px 0; /* same as padding bottom & top as set inputs. Ensures label aligns vertically with the input */
+            }
+
+            .form.form_responsive_stack_style .col_label .label_block {
+                margin: 0;
+                padding: 8px 0; /* same as padding bottom & top as "span.value" ref: 1.7.8 Value. Ensures label aligns vertically with the value */
+            }
+		}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.4 Notes */
+	/* --------------------------------------------------------------- */
+
+		.form .row small {
+			@include rem('font-size',12px);
+
+			// background-color: yellow;
+			color: black;
+			display: block;
+			line-height: normal;
+			margin: 0 0 6px 0;
+		}
+
+		.form .row legend small,
+		.form .row label small,
+		.form .row input + small {
+			// background-color: orange;
+			display: inline;
+			margin: 0 0 0 6px
+		}
+
+		.form .row input + small,
+		.form .row select + small {
+			// background-color: fuchsia;
+			display: block;
+			margin: 6px 0 0 0;
+		}
+
+		.form .row label input + small {
+			// background-color: aqua;
+			display: inline-block;
+			margin: 0 0 0 6px;
+		}
+
+		@media only screen and (min-width: 30.0625em) { /* 481px % 16px base */
+		.form .row input + small,
+		.form .row select + small {
+			// background-color: purple;
+			display: inline;
+			margin: 0 0 0 6px;
+		}
+		}
+
+		/* Form Responsive Stack Styles
+		-------------------------------------------- */
+
+		@include mq(tablet) {
+			.form.form_responsive_stack_style .col_label label + small {
+				// background-color: green;
+				margin-bottom: 0;
+			}
+		}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.5 Inputs */
+	/* --------------------------------------------------------------- */
+
+		/* 1. Address 'appearance' set to 'searchfield' in Safari 5 and Chrome */
+		/* 2. Address 'box-sizing' set to 'border-box' in Safari 5 and Chrome */
+		input[type="search"] {
+		    -webkit-appearance: textfield; /* 1 */
+		    -moz-box-sizing: content-box;
+		    -webkit-box-sizing: content-box; /* 2 */
+		    box-sizing: content-box;
+		}
+
+		/* Remove inner padding and search cancel button in Safari 5 and Chrome on OS X */
+		input[type="search"]::-webkit-search-cancel-button,
+		input[type="search"]::-webkit-search-decoration {
+		    -webkit-appearance: none;
+		}
+
+		/* Remove inner padding and border in Firefox 3+ */
+		button::-moz-focus-inner,
+		input::-moz-focus-inner {
+		    border: 0;
+		    padding: 0;
+		}
+
+		/*  Inputs type= email/password/search/text/url
+		-------------------------------------------- */
+
+		input[type=email],
+		input[type=number],
+		input[type=password],
+		input[type=search],
+		input[type=text],
+		input.txt,
+		input[type=url] {
+			@include box-sizing(border-box);
+
+            border: 1px solid #cbcbce;
+            max-width: 100%;
+			padding: 10px;
+            width: 300px;
+		}
+
+		input[type=email]:focus,
+		input[type=number]:focus,
+		input[type=password]:focus,
+		input[type=search]:focus,
+		input[type=text]:focus,
+		input.txt:focus,
+		input[type=url]:focus {
+            border: 1px solid $cibis-light-blue;
+			outline: 0;
+		}
+
+        input:disabled {
+            background-color: #f0f0f0;
+            border: 1px solid #cbcbce;
+        }
+
+		/* input within a form > list > label */
+		.form .row ul li label input[type=email],
+		.form .row ul li label input[type=password],
+		.form .row ul li label input[type=search],
+		.form .row ul li label input[type=text],
+		.form .row ul li label input.txt,
+		.form .row ul li label input[type=url] {
+			margin-left: 6px;
+		}
+
+		/* input sizes */
+		input.input_xsmall {
+		  width: 50px;
+		}
+
+		input.input_small {
+		  width: 100px;
+		}
+
+		input.input_medium {
+		  width: 200px;
+		}
+
+		input.input_large {
+		  width: 250px;
+		}
+
+		input.input_xlarge {
+		  width: 300px;
+		}
+
+		input.input_xxlarge {
+		  width: 350px;
+		}
+
+		/*  Inputs - Checkbox
+		-------------------------------------------- */
+
+		input[type=checkbox] {
+			float: left;
+			margin-right: 10px;
+			position: relative;
+		}
+
+		label input[type=checkbox] {
+			float: none;
+		}
+
+		/* Internet Explorer 10 */
+		.ua-ie-10 input[type=checkbox] {top: 3px}
+		.ua-ie-10 label input[type=checkbox] {top: 2px}
+
+		/* Internet Explorer 9 */
+		.ua-ie-9 input[type=checkbox] {top: 3px}
+		.ua-ie-9 label input[type=checkbox] {top: 2px}
+
+		/* Internet Explorer 8 */
+		.ua-ie-8 input[type=checkbox] {top: 4px}
+		.ua-ie-8 label input[type=checkbox] {top: 2px}
+
+		/* Firefox (Windows) */
+		.ua-firefox input[type=checkbox] {top: 4px}
+		.ua-firefox label input[type=checkbox] {top: 2px}
+
+		/* Firefox (Mac) */
+		.ua-mac_os_x.ua-firefox input[type=checkbox] {top: 3px;}
+		.ua-mac_os_x.ua-firefox label input[type=checkbox] {top: -1px}
+
+		/* Google Chrome (Windows) */
+		.ua-chrome input[type=checkbox] {top: 3px}
+		.ua-chrome label input[type=checkbox] {top: 2px}
+
+		/* Google Chrome (Mac) */
+		.uxa-mac_os_x.ua-chrome input[type=checkbox] {top: 2px}
+		.ua-mac_os_x.ua-chrome label input[type=checkbox] {top: -1px}
+
+		/* Safari */
+		.ua-safari input[type=checkbox] {top: 4px}
+		.ua-safari label input[type=checkbox] {top: -1px}
+
+		/*  Inputs - Radio
+		-------------------------------------------- */
+
+		input[type=radio] {
+			float: left;
+			margin-right: 10px;
+			position: relative;
+		}
+
+		label input[type=radio] {
+			float: none;
+		}
+
+		/* Internet Explorer 10 */
+		.ua-ie-10 input[type=radio] {top: 3	px}
+		.ua-ie-10 label input[type=radio] {top: 2px}
+
+		/* Internet Explorer 9 */
+		.ua-ie-9 input[type=radio] {top: 3px}
+		.ua-ie-9 label input[type=radio] {top: 1px}
+
+		/* Internet Explorer 8 */
+		.ua-ie-8 input[type=radio] {top: 3px}
+		.ua-ie-8 label input[type=radio] {top: 2px}
+
+		/* Firefox (Windows) */
+		.ua-firefox input[type=radio] {top: 3px}
+		.ua-firefox label input[type=radio] {top: 2px}
+
+		/* Firefox (Mac) */
+		.ua-mac_os_x.ua-firefox input[type=radio] {top: 4px}
+		.ua-mac_os_x.ua-firefox label input[type=radio] {top: 0}
+
+		/* Google Chrome (Windows) */
+		.ua-chrome input[type=radio] {top: 3px}
+		.ua-chrome label input[type=radio] {top: 2px}
+
+		/* Google Chrome (Mac) */
+		.ua-mac_os_x.ua-chrome input[type=radio] {top: 3px}
+		.ua-mac_os_x.ua-chrome label input[type=radio] {top: 0}
+
+		/* Safari */
+		.ua-safari input[type=radio] {top: 2px}
+		.ua-safari label input[type=radio] {top: -1px}
+
+		/*  Inputs - Hidden
+		-------------------------------------------- */
+
+		input[type=hidden] {
+			display: none;
+		}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.6 Selects */
+	/* --------------------------------------------------------------- */
+
+		select {
+			@include box-sizing(border-box);
+
+			border: 1px solid #cbcbce;
+			padding: 9px 10px;
+            min-width: 300px;
+            max-width: 100%;
+		}
+
+		select:focus {
+            border: 1px solid $cibis-light-blue;
+			outline: 0;
+		}
+
+        select:disabled {
+            background-color: #f0f0f0;
+            border: 1px solid #cbcbce;
+        }
+
+		/* input within a form > list > label */
+		.form .row ul li label select {
+			margin-left: 6px;
+		}
+
+			option {
+				padding-left: 3px;
+				padding-right: 12px;
+			}
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.7 Textareas */
+	/* --------------------------------------------------------------- */
+
+		textarea {
+			@include box-sizing(border-box);
+
+			border: 1px solid #cbcbce;
+			overflow: auto; /* Remove default vertical scrollbar in IE 6/7/8/9 */
+			padding: 10px;
+			/* resize: vertical; Allow only vertical resizing of textareas */
+
+			-moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+
+			vertical-align: top; /* Improve readability and alignment in all browsers */
+			width: 100%;
+		}
+
+		textarea:focus {
+            border: 1px solid $cibis-light-blue;
+			outline: 0;
+		}
+
+        textarea:disabled {
+            background-color: #f0f0f0;
+            border: 1px solid #cbcbce;
+        }
+
+	/* --------------------------------------------------------------- */
+	/* 1.7.8 Values */
+	/* --------------------------------------------------------------- */
+
+		.form .value {
+			display: block;
+			padding: 8px 0;
+		}

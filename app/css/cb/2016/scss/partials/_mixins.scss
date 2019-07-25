@@ -1,0 +1,250 @@
+/* ================================================================================ */
+/*  SASS Mixins */
+/* ================================================================================ */
+
+	/* --------------------------------------------------------------- */
+	/*  Compass CSS3 background gradients not working in IE 10  */
+	/* --------------------------------------------------------------- */
+
+		/* http://joshuapaling.com/post/compass-background-gradients-not-working-ie10
+
+		@include background-image-with-ms(linear-gradient(top, hsl(1,100%,25%) 0%,hsl(1,100%,19%) 100%)); // IE10
+
+		*/
+
+		@mixin background-image-with-ms($image) {
+			@include background-image($image); // Compass default version, for everything but IE 10.
+			background-image: -ms-#{$image}; // Vendor prefixes for IE 10.
+		}
+
+	/* --------------------------------------------------------------- */
+	/*  Media Queries */
+	/* --------------------------------------------------------------- */
+
+		/* http://css-tricks.com/conditional-media-query-mixins
+
+		.sidebar {
+			width: 33.33%;
+
+			@include mq(desktop) {
+				width: 100%;
+			}
+		}
+
+		*/
+
+		@mixin mq($point) {
+
+			/* Width 1
+			-------------------------------------------- */
+
+				@if $point == max_width_1 {
+					@media (max-width: 20em) { @content; } /* 320px % 16px base */
+				}
+
+				@if $point == min_width_1 {
+					@media (min-width: 20.0625em) { @content; } /* 321px % 16px base */
+				}
+
+			/* Width 2
+			-------------------------------------------- */
+
+				@if $point == max_width_2 {
+					@media (max-width: 30em) { @content; } /* 480px % 16px base */
+				}
+
+				@if $point == min_width_2 {
+					@media (min-width: 30.0625em) { @content; } /* 481px % 16px base */
+				}
+
+			/* Width 3
+			-------------------------------------------- */
+
+				@if $point == max_width_3 {
+					@media (max-width: 31.25em) { @content; } /* 500px % 16px base */
+				}
+
+				@if $point == min_width_3 {
+					@media (min-width: 31.3125em) { @content; } /* 501px % 16px base */
+				}
+
+			/* Width 4
+			-------------------------------------------- */
+
+				@if $point == max_width_4 {
+					@media (max-width: 37.5em) { @content; } /* 600px % 16px base */
+				}
+
+				@if $point == min_width_4 {
+					@media (min-width: 37.5625em) { @content; } /* 601px % 16px base */
+				}
+
+			/* Width 5
+			-------------------------------------------- */
+
+				@if $point == max_width_5 {
+					@media (max-width: 43.75em) { @content; } /* 700px % 16px base */
+				}
+
+				@if $point == min_width_5 {
+					@media (min-width: 43.8125em) { @content; } /* 701px % 16px base */
+				}
+
+			/* Width 6
+			-------------------------------------------- */
+
+				@if $point == max_width_6 {
+					@media (max-width: 50em) { @content; } /* 800px % 16px base */
+				}
+
+				@if $point == min_width_6 {
+					@media (min-width: 50.0625em) { @content; } /* 801px % 16px base */
+				}
+
+			/* Width 7
+			-------------------------------------------- */
+
+				@if $point == max_width_7 {
+					@media (max-width: 56.25em) { @content; } /* 900px % 16px base */
+				}
+
+				@if $point == min_width_7 {
+					@media (min-width: 56.3125em) { @content; } /* 901px % 16px base */
+				}
+
+			/* Width 8
+			-------------------------------------------- */
+
+				@if $point == max_width_8 {
+					@media (max-width: 62.5em) { @content; } /* 1000px % 16px base */
+				}
+
+				@if $point == min_width_8 {
+					@media (min-width: 62.5625em) { @content; } /* 1001px % 16px base */
+				}
+
+			/* Width 9
+			-------------------------------------------- */
+
+				@if $point == max_width_9 {
+					@media (max-width: 68.75em) { @content; } /* 1100px % 16px base */
+				}
+
+				@if $point == min_width_9 {
+					@media (min-width: 68.8125em) { @content; } /* 1101px % 16px base */
+				}
+
+			/* Width 10
+			-------------------------------------------- */
+
+				@if $point == max_width_10 {
+					@media (max-width: 75em) { @content; } /* 1200px % 16px base */
+				}
+
+				@if $point == min_width_10 {
+					@media (min-width: 75.0625em) { @content; } /* 1201px % 16px base */
+				}
+
+			/* Width 11
+			-------------------------------------------- */
+
+				@if $point == max_width_11 {
+					@media (max-width: 81.25em) { @content; } /* 1300px % 16px base */
+				}
+
+				@if $point == min_width_11 {
+					@media (min-width: 81.3125em) { @content; } /* 1301px % 16px base */
+				}
+
+			/* Width 12
+			-------------------------------------------- */
+
+				@if $point == max_width_12 {
+					@media (max-width: 87.5em) { @content; } /* 1400px % 16px base */
+				}
+
+				@if $point == min_width_12 {
+					@media (min-width: 87.5625em) { @content; } /* 1401px % 16px base */
+				}
+
+			/*
+			-------------------------------------------- */
+
+				@if $point == max_mobile {
+					@media (max-width: 30em) { @content; } /* 480px % 16px base */
+				}
+
+				@if $point == min_mobile {
+					@media (min-width: 30.0625em) { @content; } /* 481px % 16px base */
+				}
+
+				@else if $point == tablet {
+					@media (min-width: 48em) { @content; } /* 768px % 16px base */
+				}
+
+				@else if $point == laptop {
+					@media (min-width: 75em) { @content; } /* 1200px % 16px base */
+				}
+
+				@else if $point == grid_max_width {
+					@media (min-width: 1340px) { @content; } /* 1340px % 16px base */
+				}
+
+		}
+
+	/* --------------------------------------------------------------- */
+	/*  Retina Images */
+	/* --------------------------------------------------------------- */
+
+		/* http://37signals.com/svn/posts/3271-easy-retina-ready-images-using-scss
+
+		@include image-2x("../../../../img/html@2x.gif", 14px, 14px);
+
+		*/
+
+		@mixin image-2x($image, $width, $height) {
+			@media
+				(-webkit-min-device-pixel-ratio: 2),
+				(min-resolution: 192dpi) {
+					/* on retina, use image that's scaled by 2 */
+					background-image: url($image);
+					background-size: $width $height;
+			}
+		}
+
+
+@mixin text($color,$size){
+	font-family: "museo",serif;
+	font-weight:300;
+	color:$color;
+	font-size:$size;
+	line-height: 1.2em;
+}
+@mixin text-bold($color,$size){
+	font-family: "museo",serif;
+	font-weight:700;
+	color:$color;
+	font-size:$size;
+	line-height: 1.2em;
+}
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin horizontal-align {
+  position: absolute;
+  left:50%;
+  -webkit-transform: translatex(-50%);
+  -ms-transform: translatex(-50%);
+  transform: translatex(-50%);
+}
+@mixin center-align {
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
