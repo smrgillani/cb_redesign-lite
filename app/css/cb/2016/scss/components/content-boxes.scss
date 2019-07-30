@@ -1,3 +1,102 @@
-.cb-content-boxes {
 
+body
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		@font-face {
+  font-family: 'museo';
+  src: url(../font/Museo700-Regular.otf);
+}
+		h1,h2,h3,h4,h5,h6,p
+		{
+			margin: 0;
+		}
+		.cb-content-boxes
+		{
+			
+			
+			background-color: #eeeeee;
+
+			
+		}
+		.cb-content-boxes .container
+		{
+			display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		       max-width: 1600px;
+    margin: auto;
+    width: 97%;
+        padding: 50px 0px;
+		}
+		.cb-content-boxes .title
+		{
+			font-size: 36px;
+			text-transform: uppercase;
+			color: #09064a;
+			font-weight: 700;
+			text-align: center;
+			padding-bottom: 40px;
+			font-family: 'Museo';
+		}
+		.cb-content-boxes .container .boxTable
+		{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.cb-content-boxes .container .boxTable .box
+		{
+			width: 300px;
+			text-align: center;
+			background-color: #ffffff;
+			margin-left: 10px;
+			padding-bottom: 25px;
+			    flex: 1;
+			        margin-bottom: 10px;
+
+		}
+		.cb-content-boxes .container .boxTable .box .boxImg
+		{
+			width: 300px;
+		}
+		.cb-content-boxes .container .boxTable .box .boxHeading
+		{
+			padding: 20px 15px 0 15px;
+			color: #09064a;
+			font-size: 20px;
+			font-family: 'Museo';
+			    line-height: 1.2;
+			font-weight: 300;
+		}
+		.cb-content-boxes .container .boxTable .box .boxTxt 
+		{
+			    text-align: left;
+			    padding: 22px 15px 18px 15px;
+			    color: #6b747e;
+			    font-family: 'Roboto', sans-serif;
+			        line-height: 1.3;
+		}
+		.cb-content-boxes .container .boxTable .box .boxBtn
+		{
+			width: 200px;
+			min-height: 50px;
+			background:none;
+			border:1px solid #00a6cf;
+			font-size: 16px;
+			text-transform: uppercase;
+			color: #003b71;
+			font-family: 'Roboto', sans-serif;
+		}
+
+@media (min-width: 768px)
+{
+	.cb-content-boxes .container
+		{
+
+		    height: 100vh;
+		    min-height: 768px;
+		}
 }
