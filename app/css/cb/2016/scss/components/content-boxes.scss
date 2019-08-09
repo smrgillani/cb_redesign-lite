@@ -29,7 +29,7 @@ body
 		    align-items: center;
 		       max-width: 1600px;
     margin: auto;
-    width: 97%;
+    width: 65%;
         padding: 50px 0px;
 		}
 		.cb-content-boxes .title
@@ -46,6 +46,7 @@ body
 		{
 			display: flex;
 			flex-wrap: wrap;
+			width: 100%;
 		}
 		.cb-content-boxes .container .boxTable .box
 		{
@@ -60,7 +61,7 @@ body
 		}
 		.cb-content-boxes .container .boxTable .box .boxImg
 		{
-			width: 300px;
+			width: 100%;
 		}
 		.cb-content-boxes .container .boxTable .box .boxHeading
 		{
