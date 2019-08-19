@@ -4343,11 +4343,32 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: 'Roboto', sans-serif;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   /* line 97, ../scss/components/content-boxes.scss */
   .cb-content-boxes .container {
     height: 100vh;
     min-height: 768px;
+  }
+}
+@media (max-width: 1220px) {
+  /* line 106, ../scss/components/content-boxes.scss */
+  .cb-content-boxes .container {
+    width: 98%;
+  }
+}
+@media (max-width: 992px) {
+  /* line 111, ../scss/components/content-boxes.scss */
+  .cb-content-boxes .container .boxTable .box {
+    flex: none;
+    flex-basis: 48%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 118, ../scss/components/content-boxes.scss */
+  .cb-content-boxes .container .boxTable .box {
+    flex-basis: 100%;
+    margin-bottom: 30px;
   }
 }
 /* line 40, ../scss/style.scss */

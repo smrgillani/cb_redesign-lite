@@ -92,7 +92,7 @@ body
 			font-family: 'Roboto', sans-serif;
 		}
 
-@media (min-width: 768px)
+@media (min-width: 992px)
 {
 	.cb-content-boxes .container
 		{
@@ -100,4 +100,23 @@ body
 		    height: 100vh;
 		    min-height: 768px;
 		}
+}
+@media (max-width: 1220px) {
+
+    .cb-content-boxes .container{
+        width: 98%;
+    }
+}
+@media (max-width: 992px) {
+    .cb-content-boxes .container .boxTable .box{
+    	flex:none;
+        flex-basis: 48%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .cb-content-boxes .container .boxTable .box{
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
 }
